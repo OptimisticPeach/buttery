@@ -2,7 +2,7 @@
 Exponentially smoothed transformations with a clean API.
 
 ## Basic Example:
-```
+```rs
 use glam::{Mat4, Quat, Vec3};
 use buttery::{Rotate, Scaffold, TransformComponent, Translate};
 struct Camera {
@@ -34,7 +34,7 @@ let view_matrix = transform.inverse();
 This example makes the camera follow a target.
 
 In this case, we can't quite use the `.and_then` api:
-```
+```rs
 use glam::{Mat4, Quat, Vec3};
 use buttery::{Rotate, Scaffold, TransformComponent, Translate};
 struct Camera {
