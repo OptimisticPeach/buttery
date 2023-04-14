@@ -1,0 +1,16 @@
+[package]
+name = "buttery"
+version = "0.1.0"
+authors = ["OptimisticPeach <patrikbuhring@gmail.com>"]
+edition = "2021"
+description = "Buttery smooth transformations with a nice API"
+readme = "readme.md"
+repository = "https://github.com/OptimisticPeach/buttery.git"
+license = "MIT OR Apache-2.0"
+keywords = ["gamedev", "graphics", "transformation"]
+categories = ["data-structures", "game-development", "graphics", "mathematics"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+glam = "0.22.0"
