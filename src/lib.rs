@@ -1,4 +1,6 @@
 #![doc = include_str!("../readme.md")]
+
+use std::fmt::Formatter;
 use std::marker::PhantomData;
 use std::ops::{Add, Mul, Sub};
 use glam::{Mat4, Quat};
@@ -13,7 +15,7 @@ pub trait Smoothed {
 }
 
 /// Describes the current state of a smoothed attribute.
-#[derive(Copy, Clone, Debug)]
+#[derive(Copy, Clone)]
 pub struct TransformComponent<T: Smoothed> {
     /// How close should the current value follow the target.
     ///
@@ -27,6 +29,19 @@ pub struct TransformComponent<T: Smoothed> {
     /// The target value.
     pub target: T::Attribute,
     _unused: PhantomData<T>,
+}
+
+impl<T: Smoothed> std::fmt::Debug for TransformComponent<T> where
+    T::Attribute: std::fmt::Debug {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct(
+            "TransformComponent",
+        )
+            .field("retention", &self.retention)
+            .field("current", &self.current)
+            .field("target", &self.target)
+            .finish()
+    }
 }
 
 impl<T: Smoothed> TransformComponent<T> {
