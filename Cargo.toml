@@ -1,6 +1,6 @@
 [package]
 name = "buttery"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["OptimisticPeach <patrikbuhring@gmail.com>"]
 edition = "2021"
 description = "Buttery smooth transformations with a nice API"
